@@ -15,7 +15,7 @@ $ gradle advanced:build
 # gradle basic:run
 $ gradle advanced:bootRun
 ```
-Note al the above commands are issued from the root project, no `cd` in `Basic` or `Advanced` is required.   
+Note all the above commands are issued from the root project, no `cd` in `Basic` or `Advanced` is required.   
 
 #### a note about the Basic project
 in this poc the Basic project actually is not a spring-boot application because of, 
