@@ -34,19 +34,31 @@ $ gradle bootRun
 #### a note about the Classic project
 in this poc the Classic project actually is not a spring-boot application because of, 
 for the sake of the question, it has only to provide a `foo.Classic` classic to the Advanced project that can load the `foo.Bar` from the `Advanced` project by using `Class.forName` 
+
+In this branch actually we don't need a settings.gradle at the parent directory of Classic to build the Classic-<version>.jar; 
+
 ``` zsh
-[gradle-multi-project-poc (limited-commit-to-advanced)]$ gradle Classic:build
-BUILD SUCCESSFUL in 1s
-7 actionable tasks: 7 executed
-[gradle-multi-project-poc (limited-commit-to-advanced)]$ ls -lart Classic/build/libs/               
+[gradle-multi-project-poc (limited-commit-to-advanced)]$ cd Classic 
+1 actionable task: 1 executed
+[Classic (limited-commit-to-advanced)]$ gradle build 
+[Classic (limited-commit-to-advanced)]$ ls -lrt build/libs 
 total 8
-drwxr-xr-x   3 ronda  staff    96 Jun 10 13:20 .
--rw-r--r--   1 ronda  staff  1363 Jun 10 13:20 Classic-0.0.1-SNAPSHOT.jar
-drwxr-xr-x  10 ronda  staff   320 Jun 10 13:20 ..
-[gradle-multi-project-poc (limited-commit-to-advanced)]$   
+-rw-r--r--  1 user  staff  1355 Jun 10 16:59 Classic-0.0.1-SNAPSHOT.jar```
 ```
 
 The final results should not change if also the `Classic` project is a spring-boot application.
+
+In any way the `Classic` project is built 
+it does not matter, since we have to commit only on the `Advanced` project, 
+all we have to do is put in the `Advanced/build.gradle` a row under `dependencies {` 
+that reference to the builded `Classic` classes, for example:
+`implementation files('../Classic/build/libs/Classic-0.0.1-SNAPSHOT.jar')`
+
+The example provided in this POC it is here only for example; if you have another way to build the `Classic` project this is fine.
+
+**IMPORTANT**: Note that there is no need in the `Classic` project to reference the `Advanced` project: 
+both `Classic/settings.gradle` and `Classic/build.gradle` it is totally agnostic with respect to `Advanced`
+this is further confirmation that it is not necessary to touch the way `Classic` is implemented and builded. 
 
 
 ## additional information about the testing/development environment
