@@ -11,9 +11,10 @@ in particular referring to the aspect that **commits can only be made to Advance
 
 ##### about the reference to the Classic project from the Advanced build.gradle
 according to the [documentation](https://docs.gradle.org/5.2.1/userguide/dependency_types.html#sub:file_dependencies) 
-since the user expressed the need that **commits can only be made to Advanced** the classic Classic project should be referenced as dependecy in the Advanced procject by a **file dependency* or another [type of dependecy](https://docs.gradle.org/5.2.1/userguide/dependency_types.html) available for the user's development environment .
+since the user expressed the need that **commits can only be made to Advanced** the `Classic` project should be referenced as *dependecy* in the `Advanced` project by a **file dependency** or another [type of dependecy](https://docs.gradle.org/5.2.1/userguide/dependency_types.html) available for the user's development environment .
 
 ![example of change to the the Advanced/build.gradle to support the new requirement](advanced-deps-change.png)
+<!-- on branch master ther Classic project was named Basic -->
 
 
 #### This POC use java 1.8 
