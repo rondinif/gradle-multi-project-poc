@@ -29,7 +29,6 @@ $ gradle classic:build
 $ cd Advanced
 $ gradle bootRun
 ```
-Note: as required 
 
 #### a note about the Classic project
 in this poc the Classic project actually is not a spring-boot application because of, 
@@ -46,7 +45,7 @@ drwxr-xr-x  10 ronda  staff   320 Jun 10 13:20 ..
 [gradle-multi-project-poc (limited-commit-to-advanced)]$   
 ```
 
-The final results should not change if also the `Basic` project is a spring-boot application.
+The final results should not change if also the `Classic` project is a spring-boot application.
 
 
 ## additional information about the testing/development environment
