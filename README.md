@@ -9,6 +9,11 @@ adapts the answer to [EDITs](https://stackoverflow.com/posts/62213471/revisions)
 made to the [question](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class/62293125#62293125)
 in particular referring to the aspect that **commits can only be made to Advanced**
 
+it this scenario ( actually not a gradle multi-project): 
+- no need to have a `settings.gradle` at the parent directory level of `Advanced`; it satisfy the requirement of not being able to commit outside of `Advanced`
+- it doesn't matter how it's built the `Classic` project, we don't care about it since we can't commit on it
+- we can't use in `Advanced/build.gradle` the `implementation project(':classic')` as dependency since this works only in  *real gradle multi-project scenarios* ; in here we must use a  **file dependency** or another [type of dependecy](https://docs.gradle.org/5.2.1/userguide/dependency_types.html) available for the user's development environment.
+
 ##### about the reference to the Classic project from the Advanced build.gradle
 according to the [documentation](https://docs.gradle.org/5.2.1/userguide/dependency_types.html#sub:file_dependencies) 
 since the user expressed the need that **commits can only be made to Advanced** the `Classic` project should be referenced as *dependecy* in the `Advanced` project by a **file dependency** or another [type of dependecy](https://docs.gradle.org/5.2.1/userguide/dependency_types.html) available for the user's development environment .
@@ -24,12 +29,39 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 ## how to
 ``` zsh
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
+# we build the classic 
 $ cd gradle-multi-project-poc
-$ gradle classic:build
+# we build the Classic project just to get it compiled classes; in this scenaio we can't commit the Classic project therefore we don't care of hot it is built; the Classic project in this project it's a sample ; whatever your project is, simply compile it as it is or simply take note of where its jar is  
+$ cd Classic
+$ gradle build
 # the above command can be changed as you wish as long as the Classic project is built
+
+cd ..
+# now the check that the Advanced bootRun works and that in the  foo.Classic class (from Classic project )  the Class.forName(foo.Bar) find the class foo.Bar (from the Advandec project )
 $ cd Advanced
 $ gradle bootRun
 ```
+
+### why it works ?
+..In order to better understand how it works lets's inspect the
+`SystemClassLoader`'s current paths by adding this lines of code in `Advanced/src/main/java/com/example/springboot/Application.java`
+``` java 
+ClassLoader cl = ClassLoader.getSystemClassLoader();
+URL[] urls = ((URLClassLoader)cl).getURLs();
+for(URL url: urls){
+    System.out.println(url.getFile());
+}
+```
+the output is:
+```
+<multi-project-root>/Advanced/build/classes/java/main/
+<multi-project-root>/Advanced/build/resources/main/
+<multi-project-root>/Classic/build/libs/Classic-0.0.1-SNAPSHOT.jar
+~/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring
+... [suppressed many othe spring devtools and gradle related caches  ]
+```
+this allow both the Advanced and the Classic classes to find each others
+
 
 #### a note about the Classic project
 in this poc the Classic project actually is not a spring-boot application because of, 
