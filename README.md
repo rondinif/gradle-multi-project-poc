@@ -31,7 +31,7 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
 # we build the classic 
 $ cd gradle-multi-project-poc
-# we build the Classic project just to get it compiled classes; in this scenaio we can't commit the Classic project therefore we don't care of hot it is built; the Classic project in this project it's a sample ; whatever your project is, simply compile it as it is or simply take note of where its jar is  
+# we build the Classic project just to get its compiled classes; in this scenario we can't commit the Classic project therefore we don't care of how it is built; the Classic project in this project it's a sample ; whatever your project is, simply compile it as it is or simply take note of where its jar is  
 $ cd Classic
 $ gradle build
 # the above command can be changed as you wish as long as the Classic project is built
