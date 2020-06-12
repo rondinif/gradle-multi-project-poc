@@ -2,7 +2,14 @@
 a POC for a possible answer to the question [Gradle and Spring-bootRun can not find my class](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class)
 by leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 
-### limited-commit-to-advanced use case
+
+branch `limited-commit-to-advanced` setup the dependecy to `Classic` from `Advanced` by `implementation files` 
+,look also at other branches of the project where other solutions are implemented:
+
+- [`master`] leverage on [`multi project builds`](https://docs.gradle.org/current/userguide/multi_project_builds.html)
+- [`composite-build`](https://github.com/rondinif/gradle-multi-project-poc/tree/composite-build) based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+
+### **limited-commit-to-advanced** use case
 
 the current **limited-commit-to-advanced** branch 
 adapts the answer to [EDITs](https://stackoverflow.com/posts/62213471/revisions) 
@@ -112,8 +119,9 @@ OS:           Mac OS X 10.15.5 x86_64
 ```
 
 ## references used
-- https://docs.gradle.org/5.2.1/userguide/dependency_types.html#sub:file_dependencies
 - https://docs.gradle.org/current/userguide/multi_project_builds.html
+- [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+- https://docs.gradle.org/current/userguide/composite_builds.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-devtools
 
 # Licence
