@@ -1,7 +1,5 @@
 # A Gradle Multi Project Proof Of Concept
 a POC for a possible answer to the question [Gradle and Spring-bootRun can not find my class](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class)
-by leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
-
 
 branch `limited-commit-to-advanced` setup the dependecy to `Classic` from `Advanced` by `implementation files` 
 ,look also at other branches of the project where other solutions are implemented:
