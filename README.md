@@ -5,7 +5,9 @@ by leveraging [multi project builds](https://docs.gradle.org/current/userguide/m
 ## other solutions
 `master` implements **multi project builds** look also at other branches of the project where other solutions are implemented:
 - `limited-commit-to-advanced`
+<!--
 - `composite-build` based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+-->
 
 #### This POC use java 1.8 
 ``` zsh 
