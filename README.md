@@ -1,9 +1,10 @@
 # A Gradle Multi Project Proof Of Concept
 a POC for a possible answer to the question [Gradle and Spring-bootRun can not find my class](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class)
-by leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
+by leveraging [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)
 
 ## other solutions
-`master` implements **multi project builds** look also at other branches of the project where other solutions are implemented:
+this branch `composite-build` implements **composite project builds** look also at other branches of the project where other solutions are implemented:
+- `master` a solution leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 - `limited-commit-to-advanced`
 - `composite-build` based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
 
@@ -15,12 +16,10 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 ``` zsh
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
 $ cd gradle-multi-project-poc
-$ gradle classic:build
-$ gradle advanced:build
-# gradle classic:run
+$ git checkout composite build 
+$ cd Advanced
 $ gradle advanced:bootRun
 ```
-Note all the above commands are issued from the root project, no `cd` in `Classic` or `Advanced` is required.   
 
 #### a note about the Classic project
 in this poc the Classic project actually is not a spring-boot application because of, 
@@ -33,7 +32,7 @@ $ gradle Classic:run
 ```
 
 The final results should not change if also the `Classic` project is a spring-boot application,
-bun in in this case we'll use `gradle Classic:bootRun`
+bun in in this case we'll use `gradle Classic:bootRun` to run it.
 
 
 ## additional information about the testing/development environment
@@ -55,7 +54,8 @@ OS:           Mac OS X 10.15.5 x86_64
 ```
 
 ## references used
-- https://docs.gradle.org/current/userguide/multi_project_builds.html
+- [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+- https://docs.gradle.org/current/userguide/composite_builds.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-devtools
 
 # Licence
