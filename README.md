@@ -1,9 +1,9 @@
 # A Gradle Multi Project Proof Of Concept
 a POC for a possible answer to the question [Gradle and Spring-bootRun can not find my class](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class)
-by leveraging [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)
+
+This branch `composite-build` implements [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)  and is based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028), look also at other branches of the project where other solutions are implemented:
 
 ## other solutions
-this branch `composite-build` implements [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)  and is based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028), look also at other branches of the project where other solutions are implemented:
 - [`master`](https://github.com/rondinif/gradle-multi-project-poc/tree/master) a solution leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 - [`limited-commit-to-advanced`](https://github.com/rondinif/gradle-multi-project-poc/tree/limited-commit-to-advanced)
 
