@@ -2,6 +2,11 @@
 a POC for a possible answer to the question [Gradle and Spring-bootRun can not find my class](https://stackoverflow.com/questions/62213471/gradle-and-spring-bootrun-can-not-find-my-class)
 by leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 
+## other solutions
+`master` implements **multi project builds** look also at other branches of the project where other solutions are implemented:
+- `limited-commit-to-advanced`
+- `composite-build` based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+
 #### This POC use java 1.8 
 ``` zsh 
 $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -10,25 +15,25 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 ``` zsh
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
 $ cd gradle-multi-project-poc
-$ gradle basic:build
+$ gradle classic:build
 $ gradle advanced:build
-# gradle basic:run
+# gradle classic:run
 $ gradle advanced:bootRun
 ```
-Note all the above commands are issued from the root project, no `cd` in `Basic` or `Advanced` is required.   
+Note all the above commands are issued from the root project, no `cd` in `Classic` or `Advanced` is required.   
 
-#### a note about the Basic project
-in this poc the Basic project actually is not a spring-boot application because of, 
+#### a note about the Classic project
+in this poc the Classic project actually is not a spring-boot application because of, 
 for the sake of the question, it has only to provide a `foo.Classic` classic to the Advanced project that can load the `foo.Bar` from the `Advanced` project by using `Class.forName` 
 ```
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
 $ cd gradle-multi-project-poc
-$ gradle Basic:run
+$ gradle Classic:run
 # OK
 ```
 
-The final results should not change if also the `Basic` project is a spring-boot application,
-bun in in this case we'll use `gradle Basic:bootRun`
+The final results should not change if also the `Classic` project is a spring-boot application,
+bun in in this case we'll use `gradle Classic:bootRun`
 
 
 ## additional information about the testing/development environment
