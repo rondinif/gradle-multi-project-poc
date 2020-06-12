@@ -3,10 +3,9 @@ a POC for a possible answer to the question [Gradle and Spring-bootRun can not f
 by leveraging [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)
 
 ## other solutions
-this branch `composite-build` implements **composite project builds** look also at other branches of the project where other solutions are implemented:
-- `master` a solution leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
-- `limited-commit-to-advanced`
-- `composite-build` based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+this branch `composite-build` implements [composite builds](https://docs.gradle.org/current/userguide/composite_builds.html)  and is based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028), look also at other branches of the project where other solutions are implemented:
+- [`master`](https://github.com/rondinif/gradle-multi-project-poc/tree/master) a solution leveraging [multi project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
+- [`limited-commit-to-advanced`](https://github.com/rondinif/gradle-multi-project-poc/tree/limited-commit-to-advanced)
 
 #### This POC use java 1.8 
 ``` zsh 
@@ -56,6 +55,7 @@ OS:           Mac OS X 10.15.5 x86_64
 ## references used
 - [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
 - https://docs.gradle.org/current/userguide/composite_builds.html
+- https://docs.gradle.org/current/userguide/multi_project_builds.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-devtools
 
 # Licence
