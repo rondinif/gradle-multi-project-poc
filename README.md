@@ -6,7 +6,7 @@ by leveraging [multi project builds](https://docs.gradle.org/current/userguide/m
 branch `limited-commit-to-advanced` setup the dependecy to `Classic` from `Advanced` by `implementation files` 
 ,look also at other branches of the project where other solutions are implemented:
 
-- [`master`] leverage on [`multi project builds`](https://docs.gradle.org/current/userguide/multi_project_builds.html)
+- [`master`](https://github.com/rondinif/gradle-multi-project-poc/tree/master) leverage on [`multi project builds`](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 - [`composite-build`](https://github.com/rondinif/gradle-multi-project-poc/tree/composite-build) based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
 
 ### **limited-commit-to-advanced** use case
