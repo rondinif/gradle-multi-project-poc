@@ -4,10 +4,9 @@ by leveraging [multi project builds](https://docs.gradle.org/current/userguide/m
 
 ## other solutions
 `master` implements **multi project builds** look also at other branches of the project where other solutions are implemented:
-- `limited-commit-to-advanced`
-<!--
-- `composite-build` based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
--->
+- [`limited-commit-to-advanced`](https://github.com/rondinif/gradle-multi-project-poc/tree/limited-commit-to-advanced)
+- [`composite-build`](https://github.com/rondinif/gradle-multi-project-poc/tree/composite-build) based on [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+
 
 #### This POC use java 1.8 
 ``` zsh 
@@ -58,6 +57,8 @@ OS:           Mac OS X 10.15.5 x86_64
 
 ## references used
 - https://docs.gradle.org/current/userguide/multi_project_builds.html
+- [Mehmet Sunkur's answer](https://stackoverflow.com/a/62333926/1657028)
+- https://docs.gradle.org/current/userguide/composite_builds.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-devtools
 
 # Licence
