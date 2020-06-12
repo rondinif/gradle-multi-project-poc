@@ -16,7 +16,7 @@ $ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 ``` zsh
 $ git clone https://github.com/rondinif/gradle-multi-project-poc
 $ cd gradle-multi-project-poc
-$ git checkout composite build 
+$ git checkout composite-build 
 $ cd Advanced
 $ gradle advanced:bootRun
 ```
